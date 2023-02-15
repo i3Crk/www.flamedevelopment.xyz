@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Test</title>
+  </head>
+
+  <body>
+    <style>
+      hr {
+        display: inline-block;
+        width: 120px;
+        margin-bottom: -5px;
+        color: white;
+      }
+
+      body {
+        background-color: #232425;
+      }
+
+    </style>
+    <style>
+      .menuHeader {
+        line-height: 0;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+    </style>
+    <style>
+      .menuButton {
+        /*box-shadow: 2px 2px;*/
+        width: 125px;
+        height: 40px;
+        color: white;
+        font-weight: bold;
+        border: 0;
+
+        font-size: 18px;
+        background-color: #5A5A5A;
+      }
+
+      .menuButton:hover {
+        border: 1;
+        color: #FF634D;
+      }
+
+      .menuButton:active {
+        background-color: #454545;
+        color: #FF634D;
+      }
+
+    </style>
+    <div class="Menu">
+      <h1 class="menuHeader">Menu</h1>
+      <hr>
+      <input type="Button" value="Home" class="menuButton" onclick="window.location.href='admin.flamedevelopment.xyz'">
+      <input type="Button" value="Log In" class="menuButton" onclick="window.location.href='admin.flamedevelopment.xyz/login'">
+      <input type="Button" value="Messenger" class="menuButton">
+      <input type="Button" value="Admin Panel" class="menuButton">
+      <input type="Button" value="Edit CrkByte" class="menuButton">
+      <input type="Button" value="" class="menuButton">
+    </div>
+    <style>
+      .Menu {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        border-style: solid;
+        border-width: 1px;
+        /* border-radius: 5px;*/
+        height: 500px;
+        width: 125px;
+        background-color: #5A5A5A;
+      }
+
+    </style>
+    <style>
+    .userInput {
+      background-color: #131415;
+      border-radius: 5px;
+      border-color: white;
+      display: block;
+      margin: auto;
+      margin-top: -350px;
+      color: white;
+    }
+    .passInput {
+      background-color: #131415;
+      border-radius: 5px;
+      border-color: white;
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+      color: white;
+    }
+    .loginSubmit {
+      border: 0;
+      border-radius: 5px;
+      background-color: #454545;
+      color: white;
+      border-color: #FF634D;
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+      height: 35px;
+      width: 100px;
+      /*box-shadow: 2px 2px #FF634D;*/
+      font-weight: bold;
+      font: arial, sans-serif;
+      
+    }
+    .loginSubmit:hover {
+      color: #FF634D;
+    }
+    .loginSubmit:active {
+      background-color: #353535;
+      color: #FF634D;
+    }
+    </style>
+    <input type="text" class="userInput" placeholder="Username" name="username">
+    <input type="password" class="passInput" placeholder="Password" name="password">
+    <input type="button" class="loginSubmit" name="loginSubmit" value="Submit">
+  </body>
+
+</html>
