@@ -1,79 +1,143 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Minimalistic Website</title>
+	<style>
+		/* Styling for the body */
+		body {
+			background-color: #202020;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			margin: 0;
+		}
+		
+		/* Styling for the topbar menu */
+		.topbar {
+			height: 50px;
+			background-color: #111;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 30px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+		
+		.topbar img {
+			height: 30px;
+			margin-right: 10px;
+		}
+		
+		.topbar button {
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 5px 10px;
+		}
+		
+		/* Styling for the chat menu */
+		.chatmenu {
+			background-color: #151515;
+			height: 100vh;
+			min-width: 200px;
+			position: fixed;
+			top: 0;
+			left: -200px;
+			transition: all 0.5s;
+			z-index: 2;
+		}
+		
+		.chatmenu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.chatmenu ul li {
+			padding: 10px 20px;
+			border-bottom: 1px solid #333;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+		
+		.chatmenu ul li:hover {
+			background-color: #333;
+		}
+		
+		.chatmenu .toggle {
+			position: absolute;
+			top: 10px;
+			right: -20px;
+			background-color: #111;
+			height: 30px;
+			width: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: all 0.5s;
+		}
+		
+		.chatmenu.open {
+			left: 0;
+		}
+		
+		.chatmenu.open + .overlay {
+			display: block;
+		}
+		
+		.overlay {
+			display: none;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+			background-color: rgba(0,0,0,0.5);
+		}
+	</style>
+</head>
+<body>
+	<!-- Topbar Menu -->
+	<div class="topbar">
+		<img src="https://via.placeholder.com/50x50" alt="Logo">
+		<button>Login</button>
+		<button>COINFLIP <img src="https://via.placeholder.com/20x20" alt="Coin"></button>
+	</div>
+	
+	<!-- Chat Menu -->
+	<div class="chatmenu">
+		<ul>
+			<li>Chat 1</li>
+			<li>Chat 2</li>
+			<li>Chat 3</li>
+		</ul>
+		<div class="toggle">
+			&#9776;
+		</div>
+	</div>
+	
+	<!-- Overlay -->
+	<div class="overlay"></div>
 
-  <head>
-    <title>Admin Workspace</title>
-  </head>
-
-  <body>
-    <style>
-      hr {
-        display: inline-block;
-        width: 120px;
-        margin-bottom: -5px;
-        color: white;
-      }
-
-      body {
-        background-color: #232425;
-      }
-
-    </style>
-    <style>
-      .menuHeader {
-        line-height: 0;
-        margin-bottom: 10px;
-        color: white;
-      }
-
-    </style>
-    <style>
-      .menuButton {
-        /*box-shadow: 2px 2px;*/
-        width: 125px;
-        height: 40px;
-        color: white;
-        font-weight: bold;
-        border: 0;
-
-        font-size: 18px;
-        background-color: #5A5A5A;
-      }
-
-      .menuButton:hover {
-        border: 1;
-        color: #FF634D;
-      }
-
-      .menuButton:active {
-        background-color: #454545;
-        color: #FF634D;
-      }
-
-    </style>
-    <div class="Menu">
-      <h1 class="menuHeader">Menu</h1>
-      <hr>
-      <input type="Button" value="Home" class="menuButton" onclick="location.reload()">
-      <input type="Button" value="Log In" class="menuButton" onclick="window.location.href='admin.flamedevelopment.xyz/login'">
-      <input type="Button" value="Messenger" class="menuButton">
-      <input type="Button" value="Admin Panel" class="menuButton">
-      <input type="Button" value="Edit CrkByte" class="menuButton">
-      <input type="Button" value="" class="menuButton">
-    </div>
-    <style>
-      .Menu {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 5px;
-        height: 500px;
-        width: 125px;
-        background-color: #5A5A5A;
-      }
-
-    </style>
-  </body>
-
+	<script>
+		/* Toggle Chat Menu */
+		var toggleBtn = document.querySelector('.toggle');
+		var chatmenu = document.querySelector('.chatmenu');
+		var overlay = document.querySelector('.overlay');
+		
+		toggleBtn.addEventListener('click', function() {
+			chatmenu.classList.toggle('open');
+		});
+		
+		overlay.addEventListener('click', function() {
+			chatmenu.classList.remove('open');
+		});
+	</script>
+</body>
 </html>
