@@ -1,143 +1,139 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Log-In</title>
+</head>
+<body>
+  <style>
+    hr {
+      display: inline-block;
+      width: 120px;
+      margin-bottom: -5px;
+      color: white;
+    }
 
-  <head>
-    <title>Log-In</title>
-  </head>
+    body {
+      background-color: #232425;
+    }
 
-  <body>
-    <style>
-      hr {
-        display: inline-block;
-        width: 120px;
-        margin-bottom: -5px;
-        color: white;
-      }
+  </style>
+  <style>
+    .menuHeader {
+      line-height: 0;
+      margin-bottom: 10px;
+      color: white;
+    }
 
-      body {
-        background-color: #232425;
-      }
+  </style>
+  <style>
+    .menuButton {
+      /*box-shadow: 2px 2px;*/
+      width: 125px;
+      height: 40px;
+      color: white;
+      font-weight: bold;
+      border: 0;
 
-    </style>
-    <style>
-      .menuHeader {
-        line-height: 0;
-        margin-bottom: 10px;
-        color: white;
-      }
+      font-size: 18px;
+      background-color: #5A5A5A;
+    }
 
-    </style>
-    <style>
-      .menuButton {
-        /*box-shadow: 2px 2px;*/
-        width: 125px;
-        height: 40px;
-        color: white;
-        font-weight: bold;
-        border: 0;
+    .menuButton:hover {
+      border: 1;
+      color: #FF634D;
+    }
 
-        font-size: 18px;
-        background-color: #5A5A5A;
-      }
+    .menuButton:active {
+      background-color: #454545;
+      color: #FF634D;
+    }
 
-      .menuButton:hover {
-        border: 1;
-        color: #FF634D;
-      }
+  </style>
+  <div class="Menu">
+    <h1 class="menuHeader">Menu</h1>
+    <hr>
+    <input type="Button" value="Home" class="menuButton" onclick="window.location.href='admin.flamedevelopment.xyz'">
+    <input type="Button" value="Log In" class="menuButton" onclick="location.reload()">
+    <input type="Button" value="Messenger" class="menuButton">
+    <input type="Button" value="Admin Panel" class="menuButton">
+    <input type="Button" value="Edit CrkByte" class="menuButton">
+    <input type="Button" value="" class="menuButton">
+  </div>
+  <style>
+    @keyframes shrink-grow {
+      0%    {transform: scale(1);}
+      50%   {transform: scale(0.8);}
+      100%  {transform: scale(1);}
+    }
 
-      .menuButton:active {
-        background-color: #454545;
-        color: #FF634D;
-      }
+    .Menu {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 5px;
+      height: 500px;
+      width: 125px;
+      background-color: #5A5A5A;
+    }
 
-    </style>
-    <div class="Menu">
-      <h1 class="menuHeader">Menu</h1>
-      <hr>
-      <input type="Button" value="Home" class="menuButton" onclick="window.location.href='admin.flamedevelopment.xyz'">
-      <input type="Button" value="Log In" class="menuButton" onclick="location.reload()">
-      <input type="Button" value="Messenger" class="menuButton">
-      <input type="Button" value="Admin Panel" class="menuButton">
-      <input type="Button" value="Edit CrkByte" class="menuButton">
-      <input type="Button" value="" class="menuButton">
-    </div>
-    <style>
-      @keyframes shrink-grow {
-        0%    {transform: scale(1);}
-        50%   {transform: scale(0.8);}
-        100%  {transform: scale(1);}
-      }
+  </style>
+  <style>
+    .userInput {
+      background-color: #131415;
+      border-radius: 5px;
+      border-color: white;
+      display: block;
+      margin: auto;
+      margin-top: -350px;
+      color: white;
+      height: 25px;
+      width: 300px;
+    }
 
-      .Menu {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 5px;
-        height: 500px;
-        width: 125px;
-        background-color: #5A5A5A;
-      }
+    .passInput {
+      background-color: #131415;
+      border-radius: 5px;
+      border-color: white;
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+      color: white;
+      height: 25px;
+      width: 300px;
+    }
 
-    </style>
-    <style>
-      .userInput {
-        background-color: #131415;
-        border-radius: 5px;
-        border-color: white;
-        display: block;
-        margin: auto;
-        margin-top: -350px;
-        color: white;
-        height: 25px;
-        width: 300px;
-      }
+    .loginSubmit {
+      border: 0;
+      border-radius: 5px;
+      background-color: #454545;
+      color: white;
+      border-color: #FF634D;
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+      height: 35px;
+      width: 100px;
+      /*box-shadow: 2px 2px #FF634D;*/
+      font-weight: bold;
+      font: arial, sans-serif;
+      cursor: pointer;
+      animation-name: shrink-grow;
+      animation-duration: 200ms;
+    }
 
-      .passInput {
-        background-color: #131415;
-        border-radius: 5px;
-        border-color: white;
-        display: block;
-        margin: auto;
-        margin-top: 10px;
-        color: white;
-        height: 25px;
-        width: 300px;
-      }
+    .loginSubmit:hover {
+      color: #FF634D;
+    }
 
-      .loginSubmit {
-        border: 0;
-        border-radius: 5px;
-        background-color: #454545;
-        color: white;
-        border-color: #FF634D;
-        display: block;
-        margin: auto;
-        margin-top: 10px;
-        height: 35px;
-        width: 100px;
-        /*box-shadow: 2px 2px #FF634D;*/
-        font-weight: bold;
-        font: arial, sans-serif;
-        cursor: pointer;
-      }
+    .loginSubmit:active {
+      background-color: #353535;
+      color: #FF634D;
+    }
 
-      .loginSubmit:hover {
-        color: #FF634D;
-      }
-
-      .loginSubmit:active {
-        background-color: #353535;
-        color: #FF634D;
-        animation-name: shrink-grow;
-        animation-duration: 200ms;
-        animation-fill-mode: both;
-      }
-
-    </style>
-    <input type="text" class="userInput" placeholder="Username" name="username">
-    <input type="password" class="passInput" placeholder="Password" name="password">
-    <input type="button" class="loginSubmit" name="loginSubmit" value="Submit" onclick=shrink-grow>
-  </body>
-
+  </style>
+  <input type="text" class="userInput" placeholder="Username" name="username">
+  <input type="password" class="passInput" placeholder="Password" name="password">
+  <input type="button" class="loginSubmit" name="loginSubmit" value="Submit" onclick="document.querySelector('.loginSubmit').classList.remove('animate'); setTimeout(() => { document.querySelector('.loginSubmit').classList.add('animate'); }, 100)">
+</body>
 </html>
