@@ -1,5 +1,8 @@
-document.querySelector('loginSubmit').addEventListener('click', function(){
-    this.classList.remove('animate');
-    setTimeout(() => { this.classList.add('animate'); }, 100);
-  });
+function animateButton() {
+    let loginSubmit = document.querySelector('.loginSubmit');
+    loginSubmit.style.animation = 'shrink-grow 200ms';
+    setTimeout(() => {
+      loginSubmit.style.animation = '';
+    }, 200);
+  }
   
