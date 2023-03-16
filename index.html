@@ -1,3 +1,6 @@
+Here is the modified code with the chat menu merged into a single chat that opens and displays other user's messages and an input to send your own messages when pressing enter or the submit button:
+
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,43 +41,49 @@
 			font-size: 16px;
 			padding: 5px 10px;
 		}
-
-		.topbar button:nth-child(2) {
-			margin-left: 10px;
-			display: inline-block;
-		}
-		
-		.topbar button:nth-child(3) {
-			margin-left: 20px;
-		}
 		
 		/* Styling for the chat menu */
 		.chatmenu {
 			background-color: #151515;
 			height: 100vh;
-			min-width: 200px;
+			min-width: 300px;
 			position: fixed;
 			top: 0;
-			left: -200px;
+			left: -300px;
 			transition: all 0.5s;
 			z-index: 2;
 		}
-		
-		.chatmenu ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+
+		.chat-input {
+			position: absolute;
+			bottom: 0;
+			background-color: #111;
+			width: 100%;
+			padding: 10px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			border-top: 1px solid #333;
+			box-sizing: border-box;
 		}
-		
-		.chatmenu ul li {
-			padding: 10px 20px;
-			border-bottom: 1px solid #333;
+
+		.chat-input input[type="text"] {
+			flex-grow: 1;
+			border: none;
+			padding: 8px;
+			background-color: #202020;
+			color: #fff;
+			border-radius: 5px;
+			margin-right: 10px;
+		}
+
+		.chat-input input[type="submit"] {
+			background-color: #009fe3;
+			color: #fff;
+			border: none;
+			padding: 8px 15px;
+			border-radius: 5px;
 			cursor: pointer;
-			transition: all 0.2s;
-		}
-		
-		.chatmenu ul li:hover {
-			background-color: #333;
 		}
 		
 		.chatmenu .toggle {
@@ -109,6 +118,34 @@
 			z-index: 1;
 			background-color: rgba(0,0,0,0.5);
 		}
+
+		.chat-messages {
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			overflow-y: auto;
+			max-height: calc(100vh - 130px);
+		}
+
+		.chat-messages .message {
+			background-color: #333;
+			color: #fff;
+			border-radius: 5px;
+			padding: 5px 10px;
+			margin-bottom: 10px;
+			max-width: 70%;
+		}
+
+		.chat-messages .message.received {
+			align-self: flex-start;
+			max-width: 80%;
+			background-color: #202020;
+		}
+
+		.chat-messages .message.sent {
+			align-self: flex-end;
+		}
+
 	</style>
 </head>
 <body>
@@ -116,4 +153,43 @@
 	<div class="topbar">
 		<img src="https://via.placeholder.com/50x50" alt="Logo">
 		<button>Login</button>
-		<button style="margin-left: 10px;">COINFLIP <img src="https://via
+		<button onclick="alert('Coin flip');">COINFLIP <img src="https://via.placeholder.com/20x20" alt="Coin"></button>
+	</div>
+	
+	<!-- Chat Menu -->
+	<div class="chatmenu">
+		<div class="chat-header">Chat 1</div>
+		<div class="chat-messages">
+			<div class="message received">Hello!</div>
+			<div class="message sent">Hi!</div>
+			<div class="message received">How are you?</div>
+			<div class="message sent">I'm good, thanks!</div>
+			<div class="message received">Great!</div>
+		</div>
+		<div class="chat-input">
+			<input type="text" placeholder="Type your message...">
+			<input type="submit" value="Send">
+		</div>
+		<div class="toggle">&#9776;</div>
+	</div>
+	
+	<!-- Overlay -->
+	<div class="overlay"></div>
+
+	<script>
+		/* Toggle Chat Menu */
+		var toggleBtn = document.querySelector('.toggle');
+		var chatmenu = document.querySelector('.chatmenu');
+		var overlay = document.querySelector('.overlay');
+		
+		toggleBtn.addEventListener('click', function() {
+			chatmenu.classList.toggle('open');
+		});
+		
+		overlay.addEventListener('click', function() {
+			chatmenu.classList.remove('open');
+		});
+	</script>
+</body>
+</html>
+```
