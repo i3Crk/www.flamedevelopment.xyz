@@ -1,0 +1,43 @@
+const mysql = require('mysql');
+const io = require('socket.io')(server);
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'your_database_username',
+  password: 'your_database_password',
+  database: 'your_database_name'
+});
+
+const sender = 'Alice';
+const recipient = 'Bob';
+const message = 'Hello, Bob!';
+
+const query = `INSERT INTO messages (sender, recipient, message) VALUES ('${sender}', '${recipient}', '${message}')`;
+
+connection.query(query, (error, results, fields) => {
+  if (error) throw error;
+  console.log(`New message inserted with ID ${results.insertId}`);
+});
+
+connection.end();
+
+io.on('connection', (socket) => {
+  console.log('New user connected');
+
+  socket.on('new_message', (data) => {
+    console.log(`New message received from ${data.sender} to ${data.recipient}: ${data.message}`);
+
+    // Insert the message into the database
+    const query = `INSERT INTO messages (sender, recipient, message) VALUES ('${data.sender}', '${data.recipient}', '${data.message}')`;
+    connection.query(query, (error, results, fields) => {
+      if (error) throw error;
+      console.log(`New message inserted with ID ${results.insertId}`);
+
+      // Emit a new message event to all connected clients
+      io.emit('new_message', {
+        sender: data.sender,
+        recipient: data.recipient,
+        message: data.message
+      });
+    });
+  });
+});
