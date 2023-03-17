@@ -39,7 +39,7 @@
 			padding: 5px 10px;
 		}
 		
-		/* Styling for the chat menu */
+		/* Styling for the tabs */
 		.tabs {
 			background-color: #151515;
 			height: 100vh;
@@ -110,12 +110,12 @@
 <body>
 	<!-- Topbar Menu -->
 	<div class="topbar">
-		<img src="https://via.placeholder.com/50x50" alt="Logo">
+		<img src="https://via.placeholder.com/50x80" alt="Logo">
 		<button>Login</button>
 		<button>COINFLIP <img src="https://via.placeholder.com/20x20" alt="Coin"></button>
 	</div>
 	
-	<!-- Chat Menu -->
+	<!-- Tabs -->
 	<div class="tabs">
 		<ul>
 			<li>Home</li>
@@ -133,7 +133,7 @@
 	<script>
 		/* Toggle Chat Menu */
 		var toggleBtn = document.querySelector('.toggle');
-		var chatmenu = document.querySelector('.chatmenu');
+		var chatmenu = document.querySelector('.tabs');
 		var overlay = document.querySelector('.overlay');
 		
 		toggleBtn.addEventListener('click', function() {
