@@ -1,106 +1,148 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RBXFlip Clone</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Minimalistic Website</title>
+	<style>
+		/* Styling for the body */
+		body {
+			background-color: #202020;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			margin: 0;
+		}
+		
+		/* Styling for the topbar menu */
+		.topbar {
+			height: 50px;
+			background-color: #111;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 30px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+		
+		.topbar img {
+			height: 30px;
+			margin-right: 10px;
+		}
+		
+		.topbar button {
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 5px 10px;
+		}
+		
+		/* Styling for the chat menu */
+		.tabs {
+			background-color: #151515;
+			height: 100vh;
+			min-width: 200px;
+			position: fixed;
+			top: 0;
+			left: -200px;
+			transition: all 0.5s;
+			z-index: 2;
+		}
+
+		.tabs img {
+			height: 15px;
+			width: 15px;
+		}
+		
+		.tabs ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.tabs ul li {
+			padding: 10px 20px;
+			border-bottom: 1px solid #333;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+		
+		.tabs ul li:hover {
+			background-color: #333;
+		}
+		
+		.tabs .toggle {
+			position: absolute;
+			top: 10px;
+			right: -20px;
+			background-color: #111;
+			height: 30px;
+			width: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: all 0.5s;
+		}
+		
+		.tabs.open {
+			left: 0;
+		}
+		
+		.tabs.open + .overlay {
+			display: block;
+		}
+		
+		.overlay {
+			display: none;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+			background-color: rgba(0,0,0,0.5);
+		}
+	</style>
 </head>
 <body>
-	<header>
-		<div class="logo">
-			<img src="logo.png" alt="RBXFlip Clone">
+	<!-- Topbar Menu -->
+	<div class="topbar">
+		<img src="https://via.placeholder.com/50x50" alt="Logo">
+		<button>Login</button>
+		<button>COINFLIP <img src="https://via.placeholder.com/20x20" alt="Coin"></button>
+	</div>
+	
+	<!-- Chat Menu -->
+	<div class="tabs">
+		<ul>
+			<li>Home</li>
+			<li>Coin Flip <img src="https://via.placeholder.com/15x15" alt="Coin"></li>
+			<li>Chat 3</li>
+		</ul>
+		<div class="toggle">
+			&#9776;
 		</div>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Buy</a></li>
-				<li><a href="#">Sell</a></li>
-				<li><a href="#">Trade</a></li>
-				<li><a href="#">Promotions</a></li>
-				<li><a href="#">Support</a></li>
-			</ul>
-		</nav>
-	</header>
-	<section class="hero">
-		<h1>Welcome to RBXFlip Clone</h1>
-		<p>Buy, sell, and trade virtual items from the online game Roblox.</p>
-		<a href="#" class="cta">Get started</a>
-	</section>
-	<section class="features">
-		<h2>Our Features</h2>
-		<div class="feature-item">
-			<img src="feature1.png" alt="Secure Trading System">
-			<h3>Secure Trading System</h3>
-			<p>Our secure trading system ensures that all transactions are safe and reliable.</p>
-		</div>
-		<div class="feature-item">
-			<img src="feature2.png" alt="Giveaways">
-			<h3>Giveaways</h3>
-			<p>Participate in our giveaways to win free virtual items and Robux.</p>
-		</div>
-		<div class="feature-item">
-			<img src="feature3.png" alt="Promo Codes">
-			<h3>Promo Codes</h3>
-			<p>Use our promo codes to get discounts on virtual items and Robux.</p>
-		</div>
-		<div class="feature-item">
-			<img src="feature4.png" alt="Referral Programs">
-			<h3>Referral Programs</h3>
-			<p>Refer friends to our platform and earn rewards for each successful referral.</p>
-		</div>
-	</section>
-	<section class="virtual-items">
-		<h2>Virtual Items</h2>
-		<div class="virtual-item">
-			<img src="item1.png" alt="Virtual Item 1">
-			<h3>Virtual Item 1</h3>
-			<p>Price: 100 Robux</p>
-			<a href="#" class="cta">Buy Now</a>
-		</div>
-		<div class="virtual-item">
-			<img src="item2.png" alt="Virtual Item 2">
-			<h3>Virtual Item 2</h3>
-			<p>Price: 200 Robux</p>
-			<a href="#" class="cta">Buy Now</a>
-		</div>
-		<div class="virtual-item">
-			<img src="item3.png" alt="Virtual Item 3">
-			<h3>Virtual Item 3</h3>
-			<p>Price: 300 Robux</p>
-			<a href="#" class="cta">Buy Now</a>
-		</div>
-	</section>
-			<section class="testimonials">
-				<h2>Testimonials</h2>
-				<div class="testimonial">
-					<p>"I was able to sell my virtual items quickly and easily using RBXFlip Clone. Highly recommended!"</p>
-					<p class="author">- John Doe</p>
-				</div>
-				<div class="testimonial">
-					<p>"RBXFlip Clone has the best selection of virtual items and the prices are unbeatable. I love this website!"</p>
-					<p class="author">- Jane Smith</p>
-				</div>
-			</section>
-			<footer>
-				<nav>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Buy</a></li>
-						<li><a href="#">Sell</a></li>
-						<li><a href="#">Trade</a></li>
-						<li><a href="#">Promotions</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Terms of Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">FAQ</a></li>
-					</ul>
-				</nav>
-				<div class="social-media">
-					<a href="#"><img src="facebook.png" alt="Facebook"></a>
-					<a href="#"><img src="twitter.png" alt="Twitter"></a>
-					<a href="#"><img src="instagram.png" alt="Instagram"></a>
-				</div>
-				<p>&copy; 2023 RBXFlip Clone. All rights reserved.</p>
-			</footer>
-		</body>
-		</html>
+	</div>
+	
+	<!-- Overlay -->
+	<div class="overlay"></div>
+
+	<script>
+		/* Toggle Chat Menu */
+		var toggleBtn = document.querySelector('.toggle');
+		var chatmenu = document.querySelector('.chatmenu');
+		var overlay = document.querySelector('.overlay');
+		
+		toggleBtn.addEventListener('click', function() {
+			chatmenu.classList.toggle('open');
+		});
+		
+		overlay.addEventListener('click', function() {
+			chatmenu.classList.remove('open');
+		});
+	</script>
+</body>
+</html>
