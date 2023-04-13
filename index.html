@@ -1,3 +1,6 @@
+Here is the updated code that moves the tabs toggle to the topbar and removes the text, replacing it with an icon indicating the tab:
+
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,17 +79,21 @@
 		}
 		
 		.tabs .toggle {
-			position: absolute;
-			top: 10px;
-			right: -20px;
-			background-color: #4d006a;
-			height: 30px;
-			width: 30px;
+			position: relative;
+			background-color: transparent;
+			height: 50px;
+			width: 50px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
 			transition: all 0.5s;
+		}
+		
+		.tabs .toggle img {
+			height: 30px;
+			width: 30px;
+			margin: 0;
 		}
 		
 		.tabs.open {
@@ -117,7 +124,10 @@
 		<button width="60px"><img src="images/Stats.png" height="20px" width="20px" alt="Stats"> Stats</button>
 		<button width="60px"><img src="images/robuxCoin.png" height="20px" width="20px" alt="Add Robux"> Add Robux</button>
 		<button width="60px"><img src="images/FAQ.png" height="20px" width="20px" alt="FAQ"> FAQ</button>
-		<button width="60px" padding="0px 80px"><img src="images/Login.png" height="30px" width="30px" alt="Login"></button>
+		<button width="60px"><img src="images/Login.png" height="30px" width="30px" alt="Login"></button>
+		<div class="toggle" onclick="document.querySelector('.tabs').classList.toggle('open')">
+			<img src="https://via.placeholder.com/30x30" alt="Toggle Tabs">
+		</div>
 	</div>
 	
 	<!-- Tabs -->
@@ -129,9 +139,6 @@
 			<li><img src="https://via.placeholder.com/15x15" height="15px" width="15px" alt="Cases"> Cases</li>
 			<li><img src="https://via.placeholder.com/15x15" height="15px" width="15px" alt="Crash"> Crash</li>
 		</ul>
-		<div class="toggle">
-			&#9776;
-		</div>
 	</div>
 	
 	<!-- Overlay -->
@@ -153,3 +160,4 @@
 	</script>
 </body>
 </html>
+```
