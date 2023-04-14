@@ -113,6 +113,7 @@
 <body>
 	<!-- Topbar Menu -->
 	<div class="topbar">
+		<img src="images/sideMenu.png" height="50px" width="50px" alt="Side Menu" id="sideMenu" onclick="">
 		<img src="images/siteLogo.png" height="50px" width="100px" alt="Logo" onclick="location.reload()">
 		<button width="60px"><img src="images/Claim.png" height="20px" width="20px" alt="Claim"> Claim</button>
 		<button width="60px"><img src="images/Stats.png" height="20px" width="20px" alt="Stats"> Stats</button>
@@ -130,26 +131,25 @@
 			<li><img src="https://via.placeholder.com/15x15" height="15px" width="15px" alt="Cases"> Cases</li>
 			<li><img src="https://via.placeholder.com/15x15" height="15px" width="15px" alt="Crash"> Crash</li>
 		</ul>
-		<div class="toggle">
+		<!--<div class="toggle">
 			&#9776;
 		</div>
-	</div>
-	
+	</div>-->
 	<!-- Overlay -->
 	<div class="overlay"></div>
 
 	<script>
 		/* Toggle Tabs Menu */
-		var toggleBtn = document.querySelector('.toggle');
-		var chatmenu = document.querySelector('.tabs');
+		var toggleBtn = document.querySelector("#sideMenu");
+		var tabs = document.querySelector('.tabs');
 		var overlay = document.querySelector('.overlay');
 		
 		toggleBtn.addEventListener('click', function() {
-			chatmenu.classList.toggle('open');
+			tabs.classList.toggle('open');
 		});
 		
 		overlay.addEventListener('click', function() {
-			chatmenu.classList.remove('open');
+			tabs.classList.remove('open');
 		});
 	</script>
 </body>
