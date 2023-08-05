@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RBXBets | Home</title>
+	<style>
+		/* Styling for the body */
+		body {
+			background-color: #600082;
+			color: #fff;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			z-index: 0;
+		}
+		
+		/* Styling for the topbar menu */
+		.topbar {
+			height: 50px;
+			background-color: #4d006a;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+			display: flex;
+			justify-content: start;
+			align-items: right;
+			padding: 0 30px;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 3;
+		}
+		
+		.topbar img {
+			height: 15x;
+			top: 10px;
+			/*margin-right: 5px;*/
+		}
+		
+		.topbar button {
+			background-color: transparent;
+			border: none;
+			color: #b6b6b6;
+			cursor: pointer;
+			font-weight: bolder;
+			font-size: 16px;
+			padding: 0px 10px;
+		}
+		
+		/* Styling for the tabs */
+		.tabs {
+			background-color: #460060;
+			height: 100vh;
+			width: 50px;
+			position: fixed;
+			top: 50px;
+			left: -200px;
+			transition: all 0.5s;
+			z-index: 2;
+		}
+
+		/*.tabs img {
+			height: 15px;
+			width: 25px;
+		}*/
+		
+		.tabs ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.tabs ul li {
+			padding: 10px 10px;
+			border-bottom: 1px solid #4d006a;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+		
+		.tabs ul li:hover {
+			background-color: #9900d1;
+		}
+		
+		.tabs .toggle {
+			position: absolute;
+			top: 10px;
+			right: -20px;
+			background-color: #4d006a;
+			height: 30px;
+			width: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: all 0.5s;
+		}
+		
+		.tabs.open {
+			left: 0;
+		}
+		
+		.tabs.open + .overlay {
+			display: block;
+		}
+		
+		.overlay {
+			display: none;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 3;
+			background-color: rgba(0,0,0,0.5);
+		}
+
+		.topbar .sideMenu {
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		.topbar .siteLogo {
+			margin-right: 5px;
+			margin-top: -2px;
+		}
+		.topbar .Claim {
+			margin-right: 5px;
+		}
+		.topbar .Stats {
+			margin-right: 5px;
+		}
+		.topbar .addRobux {
+			margin-right: 5px;
+		}
+		.topbar .FAQ {
+			margin-right: 5px;
+		}
+		.topbar .Login {
+			margin-right: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Topbar Menu -->
+	<div class="topbar">
+		<img src="images/sideMenu.png" height="15px" width="20px" alt="Side Menu" id="sideMenu">
+		<img src="images/siteLogo.png" height="50px" width="100px" alt="Logo" id="siteLogo" onclick="location.reload()">
+		<button width="60px"><img src="images/Claim.png" height="20px" width="20px" alt="Claim" id="Claim"> Claim</button>
+		<button width="60px"><img src="images/Stats.png" height="20px" width="20px" alt="Stats" id="Stats"> Stats</button>
+		<button width="60px"><img src="images/robuxCoin.png" height="20px" width="20px" alt="Add Robux" id="addRobux"> Add Robux</button>
+		<button width="60px"><img src="images/FAQ.png" height="20px" width="20px" alt="FAQ" id="FAQ"> FAQ</button>
+		<button width="30px"><img src="images/Login.png" height="30px" width="30px" alt="Login" id="Login"></button>
+	</div>
+	
+ 	<!-- Tabs -->
+	<div class="tabs">
+		<ul>
+			<li><img src="images/Home.png" height="20px" width="27px" alt="Home"></li>
+			<li><img src="images/Games.png" height="15px" width="25px" alt="Games"></li>
+			<li><img src="images/Shop.png" height="20px" width="27px" alt="Market"></li>
+			<li><img src="images/Deposit.png" height="15px" width="25px" alt="Deposit"></li>
+			<!--<li><img src="https://via.placeholder.com/20x20" height="20px" width="20px" alt="Crash"></li>-->
+		</ul>
+		<!--<div class="toggle">
+			&#9776;
+		</div>
+	</div>-->
+	<!-- Overlay -->
+	<div class="overlay"></div>
+
+	<script>
+		/* Toggle Tabs Menu */
+		var toggleBtn = document.querySelector("#sideMenu");
+		var tabs = document.querySelector('.tabs');
+		var overlay = document.querySelector('.overlay');
+		
+		toggleBtn.addEventListener('click', function() {
+			tabs.classList.toggle('open');
+		});
+		
+		overlay.addEventListener('click', function() {
+			tabs.classList.remove('open');
+		});
+	</script>
+</body>
+</html>
